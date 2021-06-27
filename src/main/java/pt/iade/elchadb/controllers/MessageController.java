@@ -8,21 +8,21 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import pt.iade.elchadb.models.repositories.AvatarRepository;
-import pt.iade.elchadb.models.Avatar;
+import pt.iade.elchadb.models.repositories.MessageRepository;
+import pt.iade.elchadb.models.Message;
 
 
 @RestController
-@RequestMapping(path = "/api/Avatar")
-public class AvatarController {
-    private Logger logger = LoggerFactory.getLogger(AvatarController.class);
+@RequestMapping(path = "/api/Message")
+public class MessageController {
+    private Logger logger = LoggerFactory.getLogger(MessageController.class);
     @Autowired
-    private AvatarRepository AvatarRepository;
+    private MessageRepository MessageRepository;
     
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
-    public Iterable<Avatar> getAvatars() {
-        logger.info("Sending all Avatar");
-        return AvatarRepository.findAll();
+    public Iterable<Message> getMessages() {
+        logger.info("Sending all Messages");
+        return MessageRepository.findAll();
     }
 
-} 
+}
