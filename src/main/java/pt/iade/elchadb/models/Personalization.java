@@ -1,4 +1,4 @@
-package pt.iade.unimanagerdb.models;
+package pt.iade.elchadb.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

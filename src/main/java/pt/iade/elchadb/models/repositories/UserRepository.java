@@ -1,8 +1,8 @@
-package pt.iade.unimanagerdb.models.repositories;
+package pt.iade.elchadb.models.repositories;
 
 import org.apache.catalina.User;
 import org.springframework.data.repository.CrudRepository;
-import pt.iade.unimanagerdb.models.AppUser;
+import pt.iade.elchadb.models.AppUser;
 
 
 public interface UserRepository extends CrudRepository<AppUser,Integer> {

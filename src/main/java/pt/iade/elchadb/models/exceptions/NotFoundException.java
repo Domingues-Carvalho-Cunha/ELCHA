@@ -1,4 +1,4 @@
-package pt.iade.unimanagerdb.models.exceptions;
+package pt.iade.elchadb.models.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

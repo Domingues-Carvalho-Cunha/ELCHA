@@ -1,4 +1,4 @@
-package pt.iade.unimanagerdb.controllers;
+package pt.iade.elchadb.controllers;
 
 import java.util.Optional;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javassist.NotFoundException;
-import pt.iade.unimanagerdb.models.AppUser;
-import pt.iade.unimanagerdb.models.repositories.UserRepository;
+import pt.iade.elchadb.models.AppUser;
+import pt.iade.elchadb.models.repositories.UserRepository;
 
 @RestController
 @RequestMapping(path="/api/Users")
