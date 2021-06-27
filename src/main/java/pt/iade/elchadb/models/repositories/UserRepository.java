@@ -9,7 +9,7 @@ import pt.iade.elchadb.models.AppUser;
 public interface UserRepository extends CrudRepository<AppUser,Integer> {
 /*
     // QUERIES
-    @QueryFindUserInfo =
+    String QueryFindUserInfo =
         "SELECT Us_id AS id, "+
         "Us_firstName AS nome, "+
         "Us_lastName AS apelido, "+

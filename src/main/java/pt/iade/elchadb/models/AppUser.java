@@ -23,7 +23,7 @@ public class AppUser {
     @Column(name="Us_email")
     private String email;
     @Column(name="Us_dob")
-    private String date;
+    private String dateOfBirth;
     @Column(name="Us_points")
     private int points;
     @Column(name="Us_level")
@@ -52,7 +52,7 @@ public class AppUser {
         return email;
     }
     public String getDate() {
-        return date;
+        return dateOfBirth;
     }
     public int getPoints() {
         return points;
