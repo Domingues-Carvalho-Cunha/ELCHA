@@ -66,10 +66,10 @@ public class UsersController {
 
   }
 
-/*
+
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
-  public Iterable<AppUser> getUnit(
+  public Iterable<AppUser> getName(
     @PathVariable(value = "text") String text) {
     logger.info("User with name like "+text);
     return UserRepository.findByNameContaining(text);
@@ -89,5 +89,5 @@ public class UsersController {
       } catch (NumberFormatException e) {}
     return UserRepository.findByNameContainingAndPointsBetween(name, _pointsMin, _pointsMax);
   } 
-*/
+
 }
