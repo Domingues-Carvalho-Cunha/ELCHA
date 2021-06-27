@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javassist.NotFoundException;
 import pt.iade.elchadb.models.AppUser;
@@ -62,19 +62,20 @@ public class UsersController {
   public class Response {
     //private String message;
     //private Object object;
-    public Response(String message, Object object) {}
+    public Response(String message, Object object) {
 
+    }   
   }
 
-/*
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
-  public Iterable<AppUser> getUnit(
+  public Iterable<AppUser> getUser(
     @PathVariable(value = "text") String text) {
-    logger.info("User with name like "+text);
+    logger.info("User with name like "+ text);
     return UserRepository.findByNameContaining(text);
   }
 
+  // PESQUISA AVANÇADA
   @GetMapping(path = "/search", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> searchUser(
     @RequestParam(value="name",defaultValue="") String name,
@@ -89,5 +90,4 @@ public class UsersController {
       } catch (NumberFormatException e) {}
     return UserRepository.findByNameContainingAndPointsBetween(name, _pointsMin, _pointsMax);
   } 
-*/
 }

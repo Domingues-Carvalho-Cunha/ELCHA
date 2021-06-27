@@ -13,12 +13,13 @@ import pt.iade.elchadb.models.Badge;
 
 
 @RestController
-@RequestMapping(path = "/api/Badge")
+@RequestMapping(path = "/api/Badges")
 public class BadgeController {
     private Logger logger = LoggerFactory.getLogger(BadgeController.class);
     @Autowired
     private BadgeRepository BadgeRepository;
     
+    // DEVOLVE TODOS OS BADGES
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Badge> getBadges() {
         logger.info("Sending all Badges");

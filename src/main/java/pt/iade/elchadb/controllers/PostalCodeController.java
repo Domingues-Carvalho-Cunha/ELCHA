@@ -13,16 +13,17 @@
     
     
     @RestController
-    @RequestMapping(path = "/api/PostalCode")
+    @RequestMapping(path = "/api/PostalCodes")
     public class PostalCodeController {
         private Logger logger = LoggerFactory.getLogger(PostalCode.class);
         @Autowired
         private PostalCodeRepository PostalCodeRepository;
         
+        // DEVOLVE TODOS OS CODIGOS POSTAIS
         @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
         public Iterable<PostalCode> getPostalCodes() {
-            logger.info("Sending all PostalCode");
-            return PersonalizationPostalCode.findAll();
+            logger.info("Sending all PostalCodes");
+            return PostalCodeRepository.findAll();
         }
     
     }

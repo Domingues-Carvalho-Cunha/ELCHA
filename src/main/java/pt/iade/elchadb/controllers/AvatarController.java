@@ -13,15 +13,16 @@ import pt.iade.elchadb.models.Avatar;
 
 
 @RestController
-@RequestMapping(path = "/api/Avatar")
+@RequestMapping(path = "/api/Avatars")
 public class AvatarController {
     private Logger logger = LoggerFactory.getLogger(AvatarController.class);
     @Autowired
     private AvatarRepository AvatarRepository;
     
+    // DEVOLVE TODOS OS AVATARS
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Avatar> getAvatars() {
-        logger.info("Sending all Avatar");
+        logger.info("Sending all Avatars");
         return AvatarRepository.findAll();
     }
 

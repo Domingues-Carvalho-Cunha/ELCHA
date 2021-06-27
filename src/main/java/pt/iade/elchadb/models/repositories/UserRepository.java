@@ -8,14 +8,6 @@ import pt.iade.elchadb.models.AppUser;
 
 public interface UserRepository extends CrudRepository<AppUser,Integer> {
 /*
-    // QUERIES
-    String QueryFindUserInfo =
-        "SELECT Us_id AS id, "+
-        "Us_firstName AS nome, "+
-        "Us_lastName AS apelido, "+
-        "Us_genero AS genero, "+
-        "Us_dob AS Data_Nascimento";
-
     String QueryFindUnitPlans =
         "SELECT u.dis_id AS id, u.dis_nome AS name, "+
         "u.dis_creditos AS credits, "+
@@ -27,6 +19,7 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
         
 */
 
+    // QUERIES
     @Query(value=
         "SELECT ut_id AS id, ut_nome AS Nome, "+
         "ut_surname AS Apelido, "+
@@ -35,13 +28,16 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
     nativeQuery=true)
     AppUser FindUserId( int UserId);
 
-    
-    // COMANDS
-    AppUser save(User user);
-    //Iterable<AppUser> findByName(String name);
-    //Iterable<AppUser> findByNameContaining(String text);
-    //Iterable<AppUser> findByPointsBetween(int min,int max);
-    //Iterable<AppUser> findByNameContainingAndPointsBetween (String name,int min,int max);
+
+
+    String findName = ("select Us_firstName from AppUser where Us_firstName =: firstName");
+    Iterable<AppUser> findByNameContaining(String text);
+
+
+    String findSomeone = ("select * from AppUser where Us_firstName, Us_points =: firstName, points");
+    Iterable<AppUser> findByName(String name);
+    Iterable<AppUser> findByPointsBetween(int min,int max);
+    Iterable<AppUser> findByNameContainingAndPointsBetween(String name, int _pointsMin, int _pointsMax);
 }
 
 

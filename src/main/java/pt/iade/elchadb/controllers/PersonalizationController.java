@@ -13,15 +13,16 @@ import pt.iade.elchadb.models.Personalization;
 
 
 @RestController
-@RequestMapping(path = "/api/Personalization")
+@RequestMapping(path = "/api/Personalizations")
 public class PersonalizationController {
     private Logger logger = LoggerFactory.getLogger(PersonalizationController.class);
     @Autowired
     private PersonalizationRepository PersonalizationRepository;
     
+    // DEVOLVE TODAS AS PERSONALIZAÇÕES
     @GetMapping(path = "", produces = MediaType.APPLICATION_JSON_VALUE)
     public Iterable<Personalization> getPersonalizations() {
-        logger.info("Sending all Personalization");
+        logger.info("Sending all Personalizations");
         return PersonalizationRepository.findAll();
     }
 
