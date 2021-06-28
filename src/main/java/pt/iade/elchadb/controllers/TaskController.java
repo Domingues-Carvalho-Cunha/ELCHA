@@ -31,9 +31,9 @@ public class TaskController {
         return TaskRepository.findAll();
     }
 
-    // DEVOLVE UM UTILIZADOR PELO ID
+    // DEVOLVE UMA TASK PELO ID
     @GetMapping(path = "/{TaskId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Task getUser(@PathVariable("TaskId") Integer TaskId) {
+    public Task getTask(@PathVariable("TaskId") Integer TaskId) {
         logger.info("Sending Task info with id "+ TaskId);
         Optional<Task> _Task = TaskRepository.findById(TaskId);
         if (!_Task.isPresent()) {
@@ -44,9 +44,9 @@ public class TaskController {
         return _Task.get();
     }
 
-    // SALVA UM ULTILIZADOR NOVO
+    // SALVA UMA TASK NOVA
     @PostMapping(path = "/saveTask", produces= MediaType.APPLICATION_JSON_VALUE)
-    public Task saveUser(@RequestBody Task task) {
+    public Task saveTask(@RequestBody Task task) {
         Task savedTask = TaskRepository.save(task);
         logger.info("Saving Task with id "+((Task) savedTask).getId());
         return savedTask;

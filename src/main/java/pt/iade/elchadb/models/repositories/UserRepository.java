@@ -1,10 +1,6 @@
 package pt.iade.elchadb.models.repositories;
 
 import org.springframework.data.jpa.repository.Query;
-
-//import javax.sql.rowset.spi.TransactionalWriter;
-
-import org.apache.catalina.User;
 import org.springframework.data.repository.CrudRepository;
 import pt.iade.elchadb.models.AppUser;
 
@@ -24,22 +20,23 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
 
     // QUERIES
     @Query(value=
-        "SELECT ut_id AS id, "+
-        "ut_nome AS Nome, "+
-        "ut_surname AS Apelido, "+
-        "ut_genero AS Genero, "+
-        "ut_danasc AS Data Nascimento",
+        "SELECT Us_ID AS id, "+
+        "Us_firstName AS firstName, "+
+        "Us_lastName AS lastName, "+
+        "Us_gender AS gender, "+
+        "Us_email AS email, "+
+        "Us_dob AS dateOfBirth, "+
+        "Us_points AS points, "+
+        "Us_level AS level, "+
+        "Us_gems AS gems, "+
+        "Us_status AS status",
     nativeQuery=true)
-    AppUser FindUserId( int UserId);   
-    
-    AppUser save(User user);
+    AppUser FindUserId( int UserId);
+
 
 /*
     String findName = ("select Us_firstName from AppUser where Us_firstName =: firstName");
-
-    @Modifying @Transactional
-    @Query(value=findName,nativeQuery = true)
-    Iterable<AppUser> findByNameContaining();
+    Iterable<AppUser> findByNameContaining(String text);
 
 
     String findSomeone = ("select * from AppUser where Us_firstName, Us_points =: firstName, points");

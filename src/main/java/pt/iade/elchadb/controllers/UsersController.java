@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 //import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javassist.NotFoundException;
+
 import pt.iade.elchadb.models.AppUser;
 import pt.iade.elchadb.models.repositories.UserRepository;
 
@@ -68,6 +69,7 @@ public class UsersController {
   }
 
 /*
+  // DEVOLVE UM UTILIZADOR PELA FILTRO DO NOME
   @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
       logger.info("A carregar a Leadearboard");
@@ -75,7 +77,7 @@ public class UsersController {
   }
 
 
-  // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME
+  // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME IMCOMPLETO
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUser(
     @PathVariable(value = "text") String text) {

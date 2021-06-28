@@ -1,23 +1,23 @@
 package pt.iade.elchadb.models.repositories;
 
-import java.util.Optional;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
-import javassist.NotFoundException;
-
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import pt.iade.elchadb.models.PostalCode;
 
+
 public interface PostalCodeRepository extends CrudRepository<PostalCode,Integer> {
 
+    // QUERIES
+    @Query(value=
+    "SELECT Pc_ID AS id, "+
+    "Pc_4D AS code4D, "+
+    "Pc_3D AS code3D, "+
+    "Pc_block AS block, "+
+    "Pc_parish AS parish, "+
+    "Pc_country AS country, ",
+    nativeQuery=true)
+    PostalCode FindUserId( int PostalCodeId);
+
 }
+
+
