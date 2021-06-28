@@ -74,8 +74,8 @@ public class UsersController {
   // DEVOLVE UM UTILIZADOR PELA FILTRO DO NOME
   @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
-      logger.info("A carregar a Leadearboard");
-      return UserRepository.findByNameContaining();
+    logger.info("A carregar a Leadearboard");
+    return UserRepository.findByName(Us_firstName);
   }
 
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME IMCOMPLETO

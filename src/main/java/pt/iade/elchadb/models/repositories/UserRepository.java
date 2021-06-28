@@ -2,6 +2,8 @@ package pt.iade.elchadb.models.repositories;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
+//import org.springframework.data.repository.query.Param;
+
 import pt.iade.elchadb.models.AppUser;
 
 
@@ -26,15 +28,13 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
     //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
 
     //Query encontrar um user por nome mesmo que imcompleto
-    String findName = ("select Us_firstName from AppUser where Us_firstName =: firstName");
+    String findByName = "select * FROM AppUser WHERE Us_firstName =: firstName";
     Iterable<AppUser> findByNameContaining(String text);
 
     //Query encontrar alguém através do nome e dos pontos
-    String findSomeone = ("select * from AppUser where Us_firstName, Us_points =: firstName, points");
-    Iterable<AppUser> findByName(String name);
-    Iterable<AppUser> findByPointsBetween(int min,int max);
+    String findSomeone = "select * FROM AppUser WHERE AppUser.Us_firstName =: firstName and AppUser.Us_points =: points";
+    Iterable<AppUser> findByName(@Param ("firstName") String name);
+    Iterable<AppUser> findByPointsBetween(@Param ("points") int min, @Param ("points") int max);
     Iterable<AppUser> findByNameContainingAndPointsBetween(String name, int _pointsMin, int _pointsMax);
 */
 }
-
-
