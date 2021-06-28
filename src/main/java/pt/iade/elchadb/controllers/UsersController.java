@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+//import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javassist.NotFoundException;
 import pt.iade.elchadb.models.AppUser;
@@ -45,7 +45,7 @@ public class UsersController {
   }
 
   // SALVA UM ULTILIZADOR NOVO
-  @PostMapping(path = "/saveUser", produces= MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(path = "/saveUser/{Us_firstName}/{Us_lastName}/{Us_gender}/{Us_email}/{Us_dob}/{Us_points}/{Us_level}/{Us_gems}/{Us_status}", produces= MediaType.APPLICATION_JSON_VALUE)
   public AppUser saveUser(@RequestBody AppUser User) {
     AppUser savedUser = UserRepository.save(User);
     logger.info("Saving User with id "+((AppUser) savedUser).getId());
@@ -66,6 +66,14 @@ public class UsersController {
 
     }   
   }
+
+/*
+  @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
+  public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
+      logger.info("A carregar a Leadearboard");
+      return UserRepository.findByNameContaining();
+  }
+
 
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
@@ -89,5 +97,6 @@ public class UsersController {
       try { _pointsMax = Integer.parseInt(pointsMax);
       } catch (NumberFormatException e) {}
     return UserRepository.findByNameContainingAndPointsBetween(name, _pointsMin, _pointsMax);
-  } 
+  }
+*/
 }
