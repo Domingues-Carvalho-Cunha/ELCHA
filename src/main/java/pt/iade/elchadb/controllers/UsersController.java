@@ -54,7 +54,7 @@ public class UsersController {
   }
 
   // APAGA UM UTILIZADOR POR ID
-  @DeleteMapping(path = "/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @DeleteMapping(path = "/Delete/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Response deleteU(@PathVariable int id){
     logger.info("Deleting unit with id "+id);
     UserRepository.deleteById(id);
@@ -69,13 +69,14 @@ public class UsersController {
   }
 
 /*
+  //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
+
   // DEVOLVE UM UTILIZADOR PELA FILTRO DO NOME
   @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
       logger.info("A carregar a Leadearboard");
       return UserRepository.findByNameContaining();
   }
-
 
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME IMCOMPLETO
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
@@ -86,7 +87,7 @@ public class UsersController {
   }
 
   // PESQUISA AVANÇADA
-  @GetMapping(path = "/search", produces= MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(path = "/search/{pointsMin}/{pointsMax}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> searchUser(
     @RequestParam(value="name",defaultValue="") String name,
     @RequestParam(value="pointsMin",defaultValue="min")String pointsMin,

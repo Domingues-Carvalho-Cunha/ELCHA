@@ -6,17 +6,6 @@ import pt.iade.elchadb.models.AppUser;
 
 
 public interface UserRepository extends CrudRepository<AppUser,Integer> {
-/*
-    String QueryFindUnitPlans =
-        "SELECT u.dis_id AS id, u.dis_nome AS name, "+
-        "u.dis_creditos AS credits, "+
-        "p.pla_semestre AS semester, "+
-        "c.cur_nome AS courseName, c.cur_id AS courseId "+
-        "FROM disciplinas u "+
-        "INNER JOIN planoestudos p ON u.dis_id=p.pla_dis_id "+
-        "INNER JOIN cursos c ON p.pla_cur_id=c.cur_id";
-        
-*/
 
     // QUERIES
     @Query(value=
@@ -33,12 +22,14 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
     nativeQuery=true)
     AppUser FindUserId( int UserId);
 
-
 /*
+    //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
+
+    //Query encontrar um user por nome mesmo que imcompleto
     String findName = ("select Us_firstName from AppUser where Us_firstName =: firstName");
     Iterable<AppUser> findByNameContaining(String text);
 
-
+    //Query encontrar alguém através do nome e dos pontos
     String findSomeone = ("select * from AppUser where Us_firstName, Us_points =: firstName, points");
     Iterable<AppUser> findByName(String name);
     Iterable<AppUser> findByPointsBetween(int min,int max);
