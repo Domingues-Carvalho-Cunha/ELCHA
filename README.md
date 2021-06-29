@@ -1,6 +1,7 @@
 # Challenging the Eldery
 
 REMOTE ADRESS: https://github.com/Domingues-Carvalho-Cunha/ELCHA.git
+
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 ELCHA visa a implementação de um contexto gamificado tendo por base uma comunidade de utilizadores.
 Pretende-se operacionalizar uma dinâmica social, onde os membros que integram a comunidade da plataforma sejam incentivados a conectarem-se com outras pessoas executando tarefas que promovam atividades físicas, mentais, atividades ecológicas e atividades que desenvolvam as suas capacidades com a tecnologia.
