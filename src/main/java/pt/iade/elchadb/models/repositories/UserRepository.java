@@ -24,17 +24,19 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
     nativeQuery=true)
     AppUser FindUserId( int UserId);
 
-/*
+
     //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
 
     //Query encontrar um user por nome mesmo que imcompleto
-    String findByName = "select * FROM AppUser WHERE Us_firstName =: firstName";
-    Iterable<AppUser> findByNameContaining(String text);
+    Iterable<AppUser> findByFirstNameContaining(String text);
 
     //Query encontrar alguém através do nome e dos pontos
-    String findSomeone = "select * FROM AppUser WHERE AppUser.Us_firstName =: firstName and AppUser.Us_points =: points";
-    Iterable<AppUser> findByName(@Param ("firstName") String name);
-    Iterable<AppUser> findByPointsBetween(@Param ("points") int min, @Param ("points") int max);
-    Iterable<AppUser> findByNameContainingAndPointsBetween(String name, int _pointsMin, int _pointsMax);
-*/
+
+    //String findSomeone = "select * FROM AppUser WHERE AppUser.Us_firstName =: firstName and AppUser.Us_points =: points";
+    //Iterable<AppUser> findByFirstName(@Param ("firstName") String name);
+
+
+    Iterable<AppUser> findByPointsBetween (int min, int max);
+    //Iterable<AppUser> findByNameContainingAndPointsBetween(String name, int _pointsMin, int _pointsMax);
+
 }

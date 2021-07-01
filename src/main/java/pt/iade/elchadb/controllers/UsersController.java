@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-//import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import javassist.NotFoundException;
 
@@ -46,7 +46,7 @@ public class UsersController {
   }
 
   // SALVA UM ULTILIZADOR NOVO
-  @PostMapping(path = "/saveUser/{Us_firstName}/{Us_lastName}/{Us_gender}/{Us_email}/{Us_dob}/{Us_points}/{Us_level}/{Us_gems}/{Us_status}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(path = "/{Us_firstName}/{Us_lastName}/{Us_gender}/{Us_email}/{Us_dob}/{Us_points}/{Us_level}/{Us_gems}/{Us_status}", produces= MediaType.APPLICATION_JSON_VALUE)
   public AppUser saveUser(@RequestBody AppUser User) {
     AppUser savedUser = UserRepository.save(User);
     logger.info("Saving User with id "+((AppUser) savedUser).getId());
@@ -54,7 +54,7 @@ public class UsersController {
   }
 
   // APAGA UM UTILIZADOR POR ID
-  @DeleteMapping(path = "/Delete/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @DeleteMapping(path = "/{id:[0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Response deleteU(@PathVariable int id){
     logger.info("Deleting unit with id "+id);
     UserRepository.deleteById(id);
@@ -68,38 +68,39 @@ public class UsersController {
     }   
   }
 
-/*
-  //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
 
+  //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
+/*
   // DEVOLVE UM UTILIZADOR PELA FILTRO DO NOME
   @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
     logger.info("A carregar a Leadearboard");
-    return UserRepository.findByName(Us_firstName);
+    return UserRepository.findByFirstName(Us_firstName);
   }
+*/
 
   // DEVOLVE UM UTILIZADOR PELA PESQUISA DO NOME IMCOMPLETO
   @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUser(
     @PathVariable(value = "text") String text) {
     logger.info("User with name like "+ text);
-    return UserRepository.findByNameContaining(text);
+    return UserRepository.findByFirstNameContaining(text);
   }
 
   // PESQUISA AVANÇADA
-  @GetMapping(path = "/search/{pointsMin}/{pointsMax}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(path = "/points", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> searchUser(
-    @RequestParam(value="name",defaultValue="") String name,
+    //@RequestParam(value="name",defaultValue="") String name,
     @RequestParam(value="pointsMin",defaultValue="min")String pointsMin,
     @RequestParam(value="pointsMax",defaultValue="max")String pointsMax) {
-      logger.info("Sending User with name like "+name+" and points between "+pointsMin+" and "+pointsMax);
+      logger.info("Sending User with points between "+pointsMin+" and "+pointsMax);
       int _pointsMin = -1;
       int _pointsMax = Integer.MAX_VALUE;
       try { _pointsMin = Integer.parseInt(pointsMin);
       } catch (NumberFormatException e) {}
       try { _pointsMax = Integer.parseInt(pointsMax);
       } catch (NumberFormatException e) {}
-    return UserRepository.findByNameContainingAndPointsBetween(name, _pointsMin, _pointsMax);
+    return UserRepository.findByPointsBetween(_pointsMin, _pointsMax);
   }
-*/
+
 }
