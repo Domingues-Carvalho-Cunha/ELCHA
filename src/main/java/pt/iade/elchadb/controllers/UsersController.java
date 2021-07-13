@@ -33,7 +33,7 @@ public class UsersController {
   }
 
   // DEVOLVE UM UTILIZADOR PELO ID
-  @GetMapping(path = "/{UserId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @GetMapping(path = "/{UserId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
   public AppUser getUser(@PathVariable("UserId") Integer UserId) {
     logger.info("Sending user info with id "+ UserId);
     Optional<AppUser> _User = UserRepository.findById(UserId);
@@ -68,10 +68,8 @@ public class UsersController {
     }   
   }
 
-
-  //Infelizmente o que se encontra a comentado impede de iniciar o servidor :(
 /*
-  // DEVOLVE UM UTILIZADOR PELA FILTRO DO NOME
+  // OUTRA FORMA DE DEVOLVER UM UTILIZADOR PELA FILTRO DO NOME
   @GetMapping(path ="/filtro/{Us_firstName}", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> getUserNome(@PathVariable String Us_firstName) {
     logger.info("A carregar a Leadearboard");
@@ -87,10 +85,9 @@ public class UsersController {
     return UserRepository.findByFirstNameContaining(text);
   }
 
-  // PESQUISA AVANÇADA
+  // PESQUISA POR RANGE DE PONTOS
   @GetMapping(path = "/points", produces= MediaType.APPLICATION_JSON_VALUE)
   public Iterable<AppUser> searchUser(
-    //@RequestParam(value="name",defaultValue="") String name,
     @RequestParam(value="pointsMin",defaultValue="min")String pointsMin,
     @RequestParam(value="pointsMax",defaultValue="max")String pointsMax) {
       logger.info("Sending User with points between "+pointsMin+" and "+pointsMax);
@@ -102,5 +99,4 @@ public class UsersController {
       } catch (NumberFormatException e) {}
     return UserRepository.findByPointsBetween(_pointsMin, _pointsMax);
   }
-
 }

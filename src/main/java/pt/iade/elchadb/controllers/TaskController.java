@@ -51,4 +51,12 @@ public class TaskController {
         logger.info("Saving Task with id "+((Task) savedTask).getId());
         return savedTask;
     }
+
+    // DEVOLVE UMA TASK POR CATEGORIA ESCOLHIDA
+    @GetMapping(path = "/{text:[^0-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    public Iterable<Task> getTask(
+        @PathVariable(value = "text") String text) {
+        logger.info(" with name like "+ text);
+        return TaskRepository.findByCategoryContaining(text);
+  }
 }

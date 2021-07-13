@@ -17,6 +17,8 @@ public interface TaskRepository extends CrudRepository<Task,Integer> {
     nativeQuery=true)
     Task FindUserId( int TaskId);
 
+    //Query encontrar task por categoria
+    Iterable<Task> findByCategoryContaining(String text);
 }
 
 
