@@ -9,10 +9,7 @@ window.onload = async function() {
         for (let User of Users) {
             html+=`<section onclick='openUsers(${User.id})'>
                     <h2>${User.firstName}</h>
-                    <h2>${User.lastName}</h>
-                    <h2>${User.gender}</h>
-                    <h2>${User.date}</h>
-
+                    <h2>${User.points} points</h>
                     </section>`
         }
         document.getElementById("Users").innerHTML = html;
