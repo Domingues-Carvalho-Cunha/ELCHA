@@ -32,7 +32,7 @@ public class AvatarController {
     }
 
     // DEVOLVE UM AVATAR PELO ID
-    @GetMapping(path = "/{AvatarId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{AvatarId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Avatar getAvatar(@PathVariable("AvatarId") Integer AvatarId) {
         logger.info("Sending Avatar info with id "+ AvatarId);
         Optional<Avatar> _Avatar = AvatarRepository.findById(AvatarId);
@@ -45,7 +45,7 @@ public class AvatarController {
     }
 
     // SALVA UM AVATAR NOVO
-    @PostMapping(path = "/saveAvatar", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public Avatar saveAvatar(@RequestBody Avatar Avatar) {
         Avatar savedAvatar = AvatarRepository.save(Avatar);
         logger.info("Saving Avatar with id "+((Avatar) savedAvatar).getId());

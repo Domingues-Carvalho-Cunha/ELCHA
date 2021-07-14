@@ -32,7 +32,7 @@ public class PersonalizationController {
     }
 
     // DEVOLVE UMA PERSONALIZAÇÃO PELO ID
-    @GetMapping(path = "/{PersonalizationId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{PersonalizationId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Personalization getPersonalization(@PathVariable("PersonalizationId") Integer PersonalizationId) {
         logger.info("Sending Personalization info with id "+ PersonalizationId);
         Optional<Personalization> _Personalization = PersonalizationRepository.findById(PersonalizationId);
@@ -45,7 +45,7 @@ public class PersonalizationController {
     }
 
     // SALVA UMA PERSONALIZAÇÃO NOVO
-    @PostMapping(path = "/savePersonalization", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public Personalization savePersonalization(@RequestBody Personalization Personalization) {
         Personalization savedPersonalization = PersonalizationRepository.save(Personalization);
         logger.info("Saving Personalization with id "+((Personalization) savedPersonalization).getId());

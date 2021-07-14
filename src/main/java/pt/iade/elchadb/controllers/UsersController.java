@@ -45,8 +45,15 @@ public class UsersController {
   return _User.get();
   }
 
+  // DEVOLVE A LEADERBOARD
+  @GetMapping(path = "/leaderboard", produces= MediaType.APPLICATION_JSON_VALUE)
+  public Iterable<AppUser> getPoints() {
+    logger.info("Sendind leaderboard");
+    return UserRepository.findbypoints();
+  }
+
   // SALVA UM ULTILIZADOR NOVO
-  @PostMapping(path = "/{Us_firstName}/{Us_lastName}/{Us_gender}/{Us_email}/{Us_dob}/{Us_points}/{Us_level}/{Us_gems}/{Us_status}", produces= MediaType.APPLICATION_JSON_VALUE)
+  @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
   public AppUser saveUser(@RequestBody AppUser User) {
     AppUser savedUser = UserRepository.save(User);
     logger.info("Saving User with id "+((AppUser) savedUser).getId());

@@ -1,24 +1,20 @@
 window.onload = async function() {
     try {
-        let Users = await $.ajax({ 
+        let user = await $.ajax({ 
             url: "/api/Users/1",
             method: "get",
             dataType: "json"
         });
-        let html = "";
-        for (let User of Users) {
-            html+=`<section onclick='openUsers(${User.id})'>
-                    <h2>Name: ${User.firstName}</h>
-                    <h2>Gender: ${User.gender}</h>
-                    <h2>Email: ${User.email}</h>
-                    <h2>Birth: ${User.dateOfBirth}</h>
-                    <h2>Points: ${User.points}</h>
-                    <h2>level: ${User.level}</h>
-                    <h2>Gems: ${User.gems} points</h>
-                    <h2>Status: ${User.status} points</h>
-                    </section>`
-        }
-        document.getElementById("Perfil").innerHTML = html;
+        document.getElementById("id").innerHTML = user.id;
+        document.getElementById("firstName").innerHTML = user.firstName;
+        document.getElementById("lastName").innerHTML = user.lastName;
+        document.getElementById("gender").innerHTML = user.gender;
+        document.getElementById("email").innerHTML = user.email;
+        document.getElementById("dateOfBirth").innerHTML = user.dateOfBirth;
+        document.getElementById("points").innerHTML = user.points;
+        document.getElementById("gems").innerHTML = user.gems;
+        document.getElementById("status").innerHTML = user.status;
+        
     } catch(err) {
         console.log(err);
     }

@@ -32,7 +32,7 @@ public class TaskController {
     }
 
     // DEVOLVE UMA TASK PELO ID
-    @GetMapping(path = "/{TaskId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{TaskId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Task getTask(@PathVariable("TaskId") Integer TaskId) {
         logger.info("Sending Task info with id "+ TaskId);
         Optional<Task> _Task = TaskRepository.findById(TaskId);
@@ -45,7 +45,7 @@ public class TaskController {
     }
 
     // SALVA UMA TASK NOVA
-    @PostMapping(path = "/saveTask", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public Task saveTask(@RequestBody Task task) {
         Task savedTask = TaskRepository.save(task);
         logger.info("Saving Task with id "+((Task) savedTask).getId());

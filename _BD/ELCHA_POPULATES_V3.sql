@@ -19,37 +19,38 @@ use ELCHA_DB;
 *  INSERIR DADOS NA TABELA APPUSER
 ************************************************************/
 INSERT INTO AppUser VALUES 
-	(DEFAULT, 'Ana', 'Costa', 'F', 'anacostaa@gmail.com', '1955-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Rita', 'Marques', 'F', 'ritamarques@gmail.com', '1955-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Rui', 'Pestana', 'M', 'ruipestana@gmail.com', '1950-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Pedro', 'Fonseca', 'M', 'pedrofonseca@gmail.com', '1951-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Catarina', 'Ribeiro', 'F', 'catarinaribeiro@gmail.com', '1961-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-	(DEFAULT, 'Antonio', 'Sousa', 'M', 'antoniosousa@gmail.com', '1960-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Joao', 'Armando', 'M', 'joaoarmando@gmail.com', '1952-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Pedro', 'Carvalho', 'M', 'pedrocarvalho@gmail.com', '1953-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Gustavo', 'dos Santos', 'M', 'gustavosantos@gmail.com', '1940-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Adelaide', 'Pereira', 'F', 'adelaidepereira@gmail.com', '1942-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-	(DEFAULT, 'Lurdes', 'Silva', 'F', 'lurdessilva@gmail.com', '1938-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Carla', 'Cunha', 'F', 'carlacunha@gmail.com', '1946-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Gabriel', 'Vitorino', 'M', 'gabrielvitorino@gmail.com', '1941-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Nuno', 'Alves', 'M', 'nunoalves@gmail.com', '1920-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Caciano', 'Carvalho', 'M', 'cacianocarvalho@gmail.com', '1950-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-	(DEFAULT, 'Maria', 'Amélia', 'F', 'mariaamelia@gmail.com', '1955-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Filipa', 'Ferreira', 'F', 'filipaferreira@gmail.com', '1960-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Teresa', 'Silva', 'F', 'teresasilva@gmail.com', '1957-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Luis', 'Domingues', 'M', 'luisdomingues@gmail.com', '1949-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Domingos', 'dos Anjos', 'M', 'domingosanjos@gmail.com', '1958-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-	(DEFAULT, 'Alberto', 'Sousa', 'M', 'albertosousa@gmail.com', '1943-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Helena', 'Vitorino', 'F', 'helenavitorino@gmail.com', '1960-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Ana', 'Pardal', 'F', 'anapardal@gmail.com', '1955-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Manuel', 'Maria', 'M', 'manuelmaria@gmail.com', '1940-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Claudia', 'Ribeiro', 'F', 'claudiaribeiro@gmail.com', '1942-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-	(DEFAULT, 'André', 'Gonçalves', 'M', 'andregoncalves@gmail.com', '1945-04-20', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Anastacia', 'Gomes', 'F', 'anastaciagomes@gmail.com', '1930-03-01', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Rui', 'Pedro', 'M', 'ruipedro@gmail.com', '1930-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Anabela', 'Pereira', 'F', 'anabelapereira@gmail.com', '1928-04-22', default, DEFAULT, DEFAULT, DEFAULT),
-    (DEFAULT, 'Francisco', 'Herculano', 'M', 'franciscoherculano@gmail.com', '1950-04-22', default, DEFAULT, DEFAULT, DEFAULT);
+	(DEFAULT, 'Ana', 'Costa', 'F', 'anacostaa@gmail.com', '1955-04-20', '20', DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Rita', 'Marques', 'F', 'ritamarques@gmail.com', '1955-03-01', '50', DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Rui', 'Pestana', 'M', 'ruipestana@gmail.com', '1950-04-22', 100, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Pedro', 'Fonseca', 'M', 'pedrofonseca@gmail.com', '1951-04-22', 70, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Catarina', 'Ribeiro', 'F', 'catarinaribeiro@gmail.com', '1961-04-22', 500, DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'Antonio', 'Sousa', 'M', 'antoniosousa@gmail.com', '1960-04-20', 150, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Joao', 'Armando', 'M', 'joaoarmando@gmail.com', '1952-03-01', 600, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Pedro', 'Carvalho', 'M', 'pedrocarvalho@gmail.com', '1953-04-22', 900, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Gustavo', 'dos Santos', 'M', 'gustavosantos@gmail.com', '1940-04-22', 2000, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Adelaide', 'Pereira', 'F', 'adelaidepereira@gmail.com', '1942-04-22', 1900, DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'Lurdes', 'Silva', 'F', 'lurdessilva@gmail.com', '1938-04-20', 2050, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Carla', 'Cunha', 'F', 'carlacunha@gmail.com', '1946-03-01', 380, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Gabriel', 'Vitorino', 'M', 'gabrielvitorino@gmail.com', '1941-04-22', 400, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Nuno', 'Alves', 'M', 'nunoalves@gmail.com', '1920-04-22', 800, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Caciano', 'Carvalho', 'M', 'cacianocarvalho@gmail.com', '1950-04-22', 3000, DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'Maria', 'Amélia', 'F', 'mariaamelia@gmail.com', '1955-04-20', 3500, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Filipa', 'Ferreira', 'F', 'filipaferreira@gmail.com', '1960-03-01', 470, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Teresa', 'Silva', 'F', 'teresasilva@gmail.com', '1957-04-22', 905, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Luis', 'Domingues', 'M', 'luisdomingues@gmail.com', '1949-04-22', 15, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Domingos', 'dos Anjos', 'M', 'domingosanjos@gmail.com', '1958-04-22', 30, DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'Alberto', 'Sousa', 'M', 'albertosousa@gmail.com', '1943-04-20', 4000, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Helena', 'Vitorino', 'F', 'helenavitorino@gmail.com', '1960-03-01', 2000, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Ana', 'Pardal', 'F', 'anapardal@gmail.com', '1955-04-22', 1000, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Manuel', 'Maria', 'M', 'manuelmaria@gmail.com', '1940-04-22', 1305, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Claudia', 'Ribeiro', 'F', 'claudiaribeiro@gmail.com', '1942-04-22', 1780, DEFAULT, DEFAULT, DEFAULT),
+	(DEFAULT, 'André', 'Gonçalves', 'M', 'andregoncalves@gmail.com', '1945-04-20', 2300, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Anastacia', 'Gomes', 'F', 'anastaciagomes@gmail.com', '1930-03-01', 55, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Rui', 'Pedro', 'M', 'ruipedro@gmail.com', '1930-04-22', 90, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Anabela', 'Pereira', 'F', 'anabelapereira@gmail.com', '1928-04-22', 4250, DEFAULT, DEFAULT, DEFAULT),
+    (DEFAULT, 'Francisco', 'Herculano', 'M', 'franciscoherculano@gmail.com', '1950-04-22', 1010, DEFAULT, DEFAULT, DEFAULT);
 
+select * from appuser
 /************************************************************
 *  INSERIR DADOS NA TABELA TASK
 ************************************************************/
@@ -399,8 +400,3 @@ INSERT INTO Send VALUES
     (DEFAULT, 1, 2, 6, '2021-06-20'),
     (DEFAULT, 1, 2, 7, '2021-06-20'),
     (DEFAULT, 1, 2, 8, '2021-06-20');
-    
-/************************************************************
-*  INSERIR DUMMY DATA
-************************************************************/
-    CALL sp_InsertRandomData (31,231,19,219,31,231);

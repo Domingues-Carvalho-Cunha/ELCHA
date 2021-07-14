@@ -1,7 +1,7 @@
 window.onload = async function() {
     try {
         let Users = await $.ajax({ 
-            url: "/api/Users",
+            url: "/api/Users/leaderboard",
             method: "get",
             dataType: "json"
         });

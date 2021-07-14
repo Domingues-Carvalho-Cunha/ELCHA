@@ -32,7 +32,7 @@ public class PostalCodeController {
     }
 
     // DEVOLVE UM CODIGO POSTAL PELO ID
-    @GetMapping(path = "/{PostalCodeId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{PostalCodeId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public PostalCode getPostalCode(@PathVariable("PostalCodeId") Integer PostalCodeId) {
         logger.info("Sending PostalCodes info with id "+ PostalCodeId);
         Optional<PostalCode> _PostalCode = PostalCodeRepository.findById(PostalCodeId);
@@ -45,7 +45,7 @@ public class PostalCodeController {
     }
 
     // SALVA UM CODIGO POSTAL NOVO
-    @PostMapping(path = "/savePostalCode", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public PostalCode savePostalCode(@RequestBody PostalCode PostalCode) {
         PostalCode savedPostalCode = PostalCodeRepository.save(PostalCode);
         logger.info("Saving PostalCode with id "+((PostalCode) savedPostalCode).getId());

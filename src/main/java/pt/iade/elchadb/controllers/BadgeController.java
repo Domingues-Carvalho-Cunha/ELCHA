@@ -32,7 +32,7 @@ public class BadgeController {
     }
 
     // DEVOLVE UM BADGE PELO ID
-    @GetMapping(path = "/{BadgeId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{BadgeId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Badge getBadge(@PathVariable("BadgeId") Integer BadgeId) {
         logger.info("Sending Badge info with id "+ BadgeId);
         Optional<Badge> _Badge = BadgeRepository.findById(BadgeId);
@@ -45,7 +45,7 @@ public class BadgeController {
     }
 
     // SALVA UM BADGE NOVO
-    @PostMapping(path = "/BadgeCode", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public Badge saveBadge(@RequestBody Badge Badge) {
         Badge savedBadge = BadgeRepository.save(Badge);
         logger.info("Saving Badge with id "+((Badge) savedBadge).getId());

@@ -7,6 +7,10 @@ import pt.iade.elchadb.models.AppUser;
 
 public interface UserRepository extends CrudRepository<AppUser,Integer> {
 
+    String findbypoints = "SELECT Us_ID, Us_firstName, Us_lastName, Us_gender, Us_email, Us_dob, Us_points, Us_level, Us_gems, Us_status FROM appuser order by Us_points desc";
+    @Query (value = findbypoints, nativeQuery = true)
+    Iterable<AppUser> findbypoints ();
+
     // QUERIES
     @Query(value=
         "SELECT Us_ID AS id, "+
@@ -27,4 +31,6 @@ public interface UserRepository extends CrudRepository<AppUser,Integer> {
 
     //Query encontrar um user por range de pontos
     Iterable<AppUser> findByPointsBetween (int min, int max);
+
+    
 }

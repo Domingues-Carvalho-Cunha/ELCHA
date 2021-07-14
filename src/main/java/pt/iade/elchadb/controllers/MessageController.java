@@ -32,7 +32,7 @@ public class MessageController {
     }
 
     // DEVOLVE UMA MENSAGEM PELO ID
-    @GetMapping(path = "/{MessageId:[1-30]+}", produces= MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(path = "/{MessageId:[1-9]+}", produces= MediaType.APPLICATION_JSON_VALUE)
     public Message getMessage(@PathVariable("MessageId") Integer MessageId) {
         logger.info("Sending Message info with id "+ MessageId);
         Optional<Message> _Message = MessageRepository.findById(MessageId);
@@ -45,7 +45,7 @@ public class MessageController {
     }
 
     // SALVA UMA MENSAGEM NOVA
-    @PostMapping(path = "/saveMessage", produces= MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(path = "", produces= MediaType.APPLICATION_JSON_VALUE)
     public Message saveMessage(@RequestBody Message Message) {
         Message savedMessage = MessageRepository.save(Message);
         logger.info("Saving Message with id "+((Message) savedMessage).getId());
